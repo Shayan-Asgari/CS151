@@ -1,0 +1,12 @@
+Your name: Shayan Asgari
+Your student ID: 012124879
+Your major: Computer Science
+Your preferred email address: shayan.asgari@sjsu.edu
+Check one: [X] Undergraduate, [ ] Graduate, [ ] Open university 
+Repeating the class? [ ] Yes, [X] No
+Place and semester where you took a programming course in Java: SJSU, Fall 2018
+Course number and grade received: CS 46A, A
+Place and semester where you took a course in data structures: SJSU, Spring 2018
+Course number and grade received: CS 46B, A
+Time it took you to answer the two questions below: 50 minutes
+Did you ask anyone for help? [ ] Yes, [X] No
