@@ -1,8 +1,4 @@
-package hw1;
-
-import java.util.Set;
-import java.util.TreeSet;
-
+import java.util.*;
 public class Encoding
 {
 	 public static Set<String> morseCodes(int m, int n) // m is number of dots, n is number of dashes
@@ -39,10 +35,6 @@ public class Encoding
 	    	 }
 	     }
 	     return morseResult;
-	 }
-	 public static void main(String[] args)
-	 {
-		 System.out.println(Encoding.morseCodes(2,1).toString());
 	 }
 }
 

@@ -1,7 +1,3 @@
-package hw1;
-
-import java.util.HashMap;
-
 public class Strings 
 {
 	public static String uniqueLetters(String str)
@@ -21,9 +17,5 @@ public class Strings
 			}
 		}
 		return sb.toString();
-	}
-	public static void main(String[] args)
-	{
-		System.out.println(Strings.uniqueLetters("oorinn"));
 	}
 }
