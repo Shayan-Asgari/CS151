@@ -9,6 +9,7 @@ public class MailSystem
       Constructs a mail system with a given number of mailboxes
       @param mailboxCount the number of mailboxes
    */
+   private ArrayList<Mailbox> mailboxes;
    public MailSystem(int mailboxCount)
    {
       mailboxes = new ArrayList<>();
@@ -37,5 +38,5 @@ public class MailSystem
       else return null;
    }
 
-   private ArrayList<Mailbox> mailboxes;
+
 }

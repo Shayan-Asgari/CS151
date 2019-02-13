@@ -7,6 +7,7 @@ public class Message
       Construct a Message object.
       @param messageText the message text
    */
+   private String text;
    public Message(String messageText)
    {
       text = messageText;
@@ -20,6 +21,4 @@ public class Message
    {
       return text;
    }
-
-   private String text;
 }

@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-
-
 /**
    A telephone that takes simulated keystrokes and voice input
    from the user and simulates spoken text.
