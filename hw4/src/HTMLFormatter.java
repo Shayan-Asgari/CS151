@@ -22,7 +22,7 @@ public class HTMLFormatter implements InvoiceFormatter
 	   
 	public String formatDuplicate(LineItem item, int quantity)
     {
-		
+		//Creating a list when each item is printed
 		total += item.getPrice();
 		double valueOfProduct = item.getPrice() * quantity;
 	    String lineItemDuplicate = (String.format("%s: $%.2f x%d \n",item.toString(),valueOfProduct, quantity));
