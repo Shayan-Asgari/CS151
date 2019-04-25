@@ -2,7 +2,6 @@
 public class HTMLFormatter implements InvoiceFormatter
 {
 	private double total;
-	private String HTMLString;
 	
 	@Override
 	public String formatHeader() 
