@@ -1,5 +1,8 @@
 import javax.swing.DefaultListModel;
 
+/**
+ * Generic TaskList class which embodies a data structure for tasks to be added to
+ */
 public class TaskList<T> extends DefaultListModel<T>
 {
 	public TaskList()

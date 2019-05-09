@@ -15,14 +15,14 @@ import com.github.lgooddatepicker.zinternaltools.CalendarSelectionEvent;
 import com.github.lgooddatepicker.zinternaltools.YearMonthChangeEvent;
 
 /**
- * Calendar class which displays a Gregorian-based calendar
+ * Calendar class which displays a Gregorian based calendar on a JFrame
  */
 public class Calendar extends JFrame
 
 {
 	private TaskFrame tf;
 	HashMap<LocalDate, TaskList<String>> map;
-	private YearMonth g;
+	private YearMonth yearMonth;
 	public Calendar() 
 	{
 		this.setLayout(new BorderLayout());
@@ -34,16 +34,13 @@ public class Calendar extends JFrame
 		this.setLocation(700,300);
 		this.setSize(640, 480);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  
-        
         JButton jb = new JButton("Tasks for Month");
         jb.addActionListener(event ->
         {
         	TaskList<String> tasks = new TaskList<String>();
 			for(LocalDate ld : map.keySet())
 			{
-			
-				System.out.println(g.getMonth().equals(ld.getMonth()));
-				if((ld.getMonth().equals(g.getMonth())) && (ld.getYear() == (g.getYear())))
+				if((ld.getMonth().equals(yearMonth.getMonth())) && (ld.getYear() == (yearMonth.getYear())))
 				{
 					TaskList<String> temp = map.get(ld);
 					Enumeration<String> e = temp.elements();
@@ -54,11 +51,11 @@ public class Calendar extends JFrame
 					}
 				}
 			}
-			TasksForMonth tfm = new TasksForMonth(g.getMonth(), g.getYear(), tasks);
+			TasksForMonth tfm = new TasksForMonth(yearMonth.getMonth(), yearMonth.getYear(), tasks);
+			tfm.show();
         }
         );
-       
-       
+
         JPanel p = new JPanel();
         p.setLayout(new BorderLayout());
         DatePickerSettings settings = new DatePickerSettings();
@@ -70,7 +67,6 @@ public class Calendar extends JFrame
         p.add(jb, BorderLayout.SOUTH);
         this.add(p, BorderLayout.CENTER);
         
-       
         calendarPanel.addCalendarListener(new SampleCalendarListener());
         this.setVisible(true);
         this.pack();
@@ -123,10 +119,8 @@ public class Calendar extends JFrame
         public void selectedDateChanged(CalendarSelectionEvent event) 
         {
         	LocalDate date = event.getNewDate();
-        	System.out.println(date);
         	if(date!=null)
         	{
-        		System.out.println(map);
         		tf.setVisible(true);
         		tf.updateDate(date);
         		TaskList<String> model = new TaskList<String>();
@@ -145,15 +139,7 @@ public class Calendar extends JFrame
 		@Override
 		public void yearMonthChanged(YearMonthChangeEvent change) 
 		{
-			g = change.getNewYearMonth();
+			yearMonth = change.getNewYearMonth();
 		}
-		
-}
-
- 
-    public static void main(String[] args) 
-    {
-    	Calendar g = new Calendar();
-    }
-
+	}
 }

@@ -20,6 +20,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+/**
+ * TaskFrame class that displays a JFrame once a day is selected from the Calendar
+ */
 public class TaskFrame extends JFrame implements DateFormatter
 {
 	private LocalDate date;
@@ -64,7 +67,6 @@ public class TaskFrame extends JFrame implements DateFormatter
 	    JButton editTask = new JButton("Edit Task");
 	    editTask.addActionListener(event ->
 	    {
-	    	System.out.println(defaultList);
 	    	if(defaultList.isEmpty())
 	    	{
 	    		ImageIcon icon = getResourceImage("image_data/sadface.png", 50,50);

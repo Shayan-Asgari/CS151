@@ -1,9 +1,12 @@
-
+/**
+ * Task class which embodies an entity in a Task List
+ *
+ */
 public class Task
 {
 	/**
     Construct a Task object.
-    @param messageText the message text
+    @param messageText the text of the message
 	 */
 	private String text;
 	public Task(String taskText)
@@ -13,7 +16,7 @@ public class Task
 
 	/**
     Get the message text.
-   	@return message text
+   	@return message the text of the message
 	 */
 	public String getText()
 	{
