@@ -34,6 +34,7 @@ public class Calendar extends JFrame
 		this.setLocation(700,300);
 		this.setSize(640, 480);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  
+        yearMonth = YearMonth.now();
         JButton jb = new JButton("Tasks for Month");
         jb.addActionListener(event ->
         {
@@ -51,11 +52,11 @@ public class Calendar extends JFrame
 					}
 				}
 			}
-			TasksForMonth tfm = new TasksForMonth(yearMonth.getMonth(), yearMonth.getYear(), tasks);
+			TaskForMonth tfm = new TaskForMonth(yearMonth.getMonth(), yearMonth.getYear(), tasks);
 			tfm.show();
         }
         );
-
+        
         JPanel p = new JPanel();
         p.setLayout(new BorderLayout());
         DatePickerSettings settings = new DatePickerSettings();
@@ -66,7 +67,6 @@ public class Calendar extends JFrame
         p.add(calendarPanel, BorderLayout.CENTER);
         p.add(jb, BorderLayout.SOUTH);
         this.add(p, BorderLayout.CENTER);
-        
         calendarPanel.addCalendarListener(new SampleCalendarListener());
         this.setVisible(true);
         this.pack();
@@ -139,7 +139,9 @@ public class Calendar extends JFrame
 		@Override
 		public void yearMonthChanged(YearMonthChangeEvent change) 
 		{
+			System.out.println("aa");
 			yearMonth = change.getNewYearMonth();
+		
 		}
 	}
 }
