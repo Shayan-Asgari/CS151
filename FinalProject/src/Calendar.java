@@ -139,7 +139,6 @@ public class Calendar extends JFrame
 		@Override
 		public void yearMonthChanged(YearMonthChangeEvent change) 
 		{
-			System.out.println("aa");
 			yearMonth = change.getNewYearMonth();
 		
 		}
