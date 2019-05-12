@@ -54,7 +54,7 @@ public class TaskForMonth
 		jt.setFont(fontTwo);
 		jt.setForeground(Color.BLACK);
 		jt.setBackground(Color.WHITE);
-	    jt.setOpaque(true);
+	    	jt.setOpaque(true);
 		frame.add(jpMonth, BorderLayout.NORTH);
 		jp.add(jt, BorderLayout.NORTH);
 		frame.add(jp,BorderLayout.CENTER);
