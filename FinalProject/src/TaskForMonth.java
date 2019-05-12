@@ -27,7 +27,7 @@ public class TaskForMonth
 	
 	public void show()
 	{
-		StringBuilder sb = new StringBuilder();
+		String tasksString = "";
 		JFrame frame = new JFrame();
 		frame.setSize(600, 400);
 		frame.setLocation(80, 300);
@@ -44,21 +44,19 @@ public class TaskForMonth
 		while(e.hasMoreElements())
 		{
 			String task = e.nextElement();
-			sb.append("- " + task);
-			sb.append(System.getProperty("line.separator"));
+			tasksString += "- " + task;
+			tasksString += "\n";
 		}
-		System.out.println(sb.toString());
 		JPanel jp = new JPanel();
 		jp.setLayout(new BorderLayout());
-		JLabel jl = new JLabel(sb.toString());
-		jl.setAlignmentX(JTextArea.CENTER_ALIGNMENT);
+		JTextArea jt = new JTextArea(tasksString.toString());
 		Font fontTwo = new Font("Arial",Font.PLAIN,18);
-		jl.setFont(fontTwo);
-		jl.setForeground(Color.BLACK);
-		jl.setBackground(Color.WHITE);
-	    jl.setOpaque(true);
+		jt.setFont(fontTwo);
+		jt.setForeground(Color.BLACK);
+		jt.setBackground(Color.WHITE);
+	    jt.setOpaque(true);
 		frame.add(jpMonth, BorderLayout.NORTH);
-		jp.add(jl, BorderLayout.NORTH);
+		jp.add(jt, BorderLayout.NORTH);
 		frame.add(jp,BorderLayout.CENTER);
 		frame.setVisible(true);
 	}
